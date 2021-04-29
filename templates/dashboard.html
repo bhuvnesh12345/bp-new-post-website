@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Edit post</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container">
+    <div class="row" style="margin-top: 40px;">
+      <div class="col-3" style="">
+        <h1 class="badge bg-success text-white" style="font-size: 2vw;">Bhuvnesh</h1>
+      </div>
+      <div class="col-3" style="text-align: center;">
+        <a href="/"><button class="btn btn-warning" style="font-size: 2vw;">Home</button></a>
+      </div>
+      <div class="col-3" style="text-align: center;">
+        <a href="/addpost"><button class="btn btn-danger" style="font-size: 2vw;">Add Post</button></a>
+      </div>
+      <div class="col-3" style="text-align: center;">
+        <a href="/logout"><button class="btn btn-primary" style="font-size: 2vw;">logout</button></a>
+      </div>
+  </div>
+</div>
+<hr>
+<hr>
+  <h1 style="text-align: center;">Post Table</h1>
+	<table class="table table-striped" style="font-size: 2vw;">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Heading</th>
+      <th scope="col">Edit</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for k in result %}
+
+        <tr>
+        <td>{{ k.id }}</td>
+        <td>{{ k.heading }}</td>
+        <td><a href="/edit/{{k.id}}"><button class="btn btn-primary ">Edit</button></a></td>
+        <td><a href="/delete/{{k.id}}"><button class="btn btn-primary">Delete</button></a></td>
+        </tr>
+      {% endfor %}
+    
+  </tbody>
+</table>
+<hr>
+<hr>
+   <h1 style="text-align: center;">Contact Table</h1>
+   <table class="table table-striped" style="font-size: 1vw;">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Message</th>
+      <th scope="col">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for k in c %}
+
+        <tr>
+        <td>{{ k.id }}</td>
+        <td>{{ k.name }}</td>
+        <td>{{ k.email }}</td>
+        <td>{{ k.phone }}</td>
+        <td>{{ k.message }}</td>
+        <td><a href="/contactdelete/{{k.id}}"><button class="btn btn-primary">Delete</button></a></td>
+        </tr>
+      {% endfor %}
+    
+  </tbody>
+</table>
+<hr>
+<hr>
+</body>
+</html>
